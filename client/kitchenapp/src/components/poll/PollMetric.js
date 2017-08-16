@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 
 import TextField from 'material-ui/TextField'
 
@@ -24,15 +23,11 @@ export default class PollMetric extends Component {
 
     render() {
         return (
-        <div className="App">
-            <div>Poll Metric</div>
-            <div>
+        <div key={this.props.metricNumber}>
+            <div className="poll-item">
+                <div>Metric {this.props.metricNumber}</div>
                 <TextField
-                    name="text"
-                    onChange={this.fieldChange}
-                />
-                <TextField
-                    name="text"
+                    name={"metric_" + this.props.metricNumber.toString()}
                     onChange={this.fieldChange}
                 />
             </div>
